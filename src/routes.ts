@@ -1,13 +1,13 @@
 import wrap from "svelte-spa-router/wrap";
 
-import Home from "./Page/Home/Home.svelte";
+import HomeViewModel from "./Pages/Home/HomeViewModel.svelte";
 
 const routes = new Map();
 
 routes.set(
   "/",
   wrap({
-    component: Home,
+    component: HomeViewModel,
   })
 );
 
