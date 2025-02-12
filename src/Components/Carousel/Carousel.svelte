@@ -9,7 +9,8 @@
   let carousel: HTMLElement;
 
   function previous(): void {
-    if (currentElement <= 0) {
+    // don't move when width is an mobile width
+    if (currentElement <= 0 || width < 600) {
       return;
     }
 
@@ -19,7 +20,8 @@
   }
 
   function next(): void {
-    if (currentElement >= images.length - 1) {
+    // don't move when width is an mobile width
+    if (currentElement >= images.length - 1 || width < 600) {
       return;
     }
 
@@ -79,6 +81,10 @@
     }
 
     .icon {
+      @media only screen and (max-width: 600px) {
+        display: none; // not show icon in mobile screens
+      }
+
       position: absolute;
       display: flex;
       align-items: center;
