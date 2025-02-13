@@ -59,7 +59,7 @@
     flex-direction: row;
     align-items: center;
     padding: 0.625rem;
-    height: min(18.75rem, 20vh);
+    max-width: 80vw;
     cursor: pointer;
 
     .carousel {
