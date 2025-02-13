@@ -7,6 +7,3 @@
 <main>
   <Router {routes} />
 </main>
-
-<style>
-</style>
