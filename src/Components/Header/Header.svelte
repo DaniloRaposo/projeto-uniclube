@@ -2,6 +2,13 @@
   import Icon from "@iconify/svelte";
 
   import Logo from "../../assets/Frame.svg";
+
+  let arrowIcon = "tabler:chevron-down";
+  let menuOpened = false;
+
+  function openMenu() {
+    menuOpened = !menuOpened;
+  }
 </script>
 
 <div class="container">
@@ -40,7 +47,21 @@
       <Icon icon="ri:shopping-cart-line" />
     </div>
   </div>
-  <div class="footer"></div>
+  <div class="footer">
+    <div class="menu-footer" on:click={openMenu}>
+      <Icon
+        icon="material-symbols:menu-rounded"
+        style="color: #f47920; font-size: 30px;"
+      />
+      <p class="department">Departamentos</p>
+      <Icon icon={arrowIcon} style="color: #f47920; font-size: 22px;" />
+      <div class="vline"></div>
+      <p>Desconto Cliente Unimed Natal</p>
+    </div>
+    <div>
+      <p>Venda no Uniclube</p>
+    </div>
+  </div>
 </div>
 
 <link
@@ -56,6 +77,12 @@
     width: 100%;
     box-shadow: 3px 3px 3px rgba(230, 230, 230, 0.5);
 
+    p {
+      margin: 0;
+      color: #3f3f3f;
+      font-family: "Source Sans 3";
+    }
+
     .top-line {
       background-color: #f47920;
       width: 100%;
@@ -65,11 +92,12 @@
     .content {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       gap: 1.25rem;
+      padding-inline: 10%;
       align-items: center;
       height: 100%;
-      width: 100%;
+      width: 80%;
       background-color: #eae0d5;
 
       .input-container {
@@ -113,10 +141,7 @@
           justify-content: center;
           line-height: 16px;
           p {
-            margin: 0;
-            color: #3f3f3f;
             font-size: 1rem;
-            font-family: "Source Sans 3";
           }
 
           .first-line {
@@ -139,10 +164,37 @@
     }
 
     .footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       height: fit-content;
-      width: calc(100% - 10rem);
-      padding: 0.625rem 5rem;
+      width: 80%;
+      padding: 0.625rem 10%;
       background-color: #f7f3ee;
+
+      .menu-footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.375rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+        cursor: pointer;
+      }
+
+      .department {
+        font-weight: 700;
+      }
+
+      .vline {
+        border: 1.5px solid #eae0d5;
+        border-radius: 1px;
+        height: 1.875rem;
+        width: 0;
+        margin-inline: 1rem;
+      }
     }
   }
 </style>
