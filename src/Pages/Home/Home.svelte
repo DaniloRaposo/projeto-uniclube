@@ -47,7 +47,7 @@
 
 <style lang="scss">
   .container {
-    width: 100%;
+    width: calc(100% - 7.5rem);
     padding: 3.75rem;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@
       align-items: flex-start;
       padding: 2.5rem;
       gap: 0.9375rem;
-      background-color: green;
+      background: url("../../assets/unimed.png");
       border-radius: 0.3125rem;
 
       .label {
