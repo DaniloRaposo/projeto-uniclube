@@ -2,7 +2,9 @@
   import { createEventDispatcher } from "svelte";
   import Icon from "@iconify/svelte";
 
-  import Logo from "../../assets/Frame.svg";
+  import Logo from "../../../assets/Frame.svg";
+
+  export let opened = false;
 
   let arrowIcon = "tabler:chevron-down";
 
@@ -11,6 +13,8 @@
   function openMenu() {
     dispatch("openMenu");
   }
+
+  $: arrowIcon = opened ? "tabler:chevron-up" : "tabler:chevron-down";
 </script>
 
 <div class="container">
@@ -96,16 +100,20 @@
       flex-direction: row;
       justify-content: space-between;
       gap: 1.25rem;
-      padding-inline: 10%;
+      padding-inline: 15%;
       align-items: center;
       height: 100%;
-      width: 80%;
+      width: 70%;
       background-color: #eae0d5;
+
+      & > * {
+        cursor: pointer;
+      }
 
       .input-container {
         display: grid;
         grid: 1fr / 1fr;
-        width: 40%;
+        width: 50%;
         height: 3.375rem;
 
         & > * {
@@ -170,8 +178,8 @@
       flex-direction: row;
       justify-content: space-between;
       height: fit-content;
-      width: 80%;
-      padding: 0.625rem 10%;
+      width: 70%;
+      padding: 0.625rem 15%;
       background-color: #f7f3ee;
 
       .menu-footer {
