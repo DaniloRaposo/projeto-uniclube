@@ -18,6 +18,6 @@
     align-items: center;
     gap: 1.25rem;
     max-width: 95vw;
-    overflow-x: scroll;
+    overflow-x: auto;
   }
 </style>
