@@ -6,7 +6,7 @@
   import type {
     TStore,
     TDepartment,
-  } from "./Components/Header/components/types";
+  } from "./Components/Header/components/types.ts";
 
   import routes from "./routes";
 

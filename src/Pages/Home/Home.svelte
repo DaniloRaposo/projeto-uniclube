@@ -2,8 +2,8 @@
   import Carousel from "../../Components/Carousel/Carousel.svelte";
   import CategoryList from "../../Components/CategoryList/CategoryList.svelte";
   import ProductCard from "../../Components/ProductCard/ProductCard.svelte";
-  import type { TCategoryItem } from "../../Components/CategoryList/types";
-  import type { TProduct } from "../../Components/ProductCard/types";
+  import type { TCategoryItem } from "../../Components/CategoryList/types.ts";
+  import type { TProduct } from "../../Components/ProductCard/types.ts";
   /**
    * images that will be displayed in carousel
    */

@@ -1,6 +1,6 @@
 <script lang="ts">
   import CategoryItem from "./CategoryItem.svelte";
-  import type { TCategoryItem } from "./types";
+  import type { TCategoryItem } from "./types.ts";
 
   export let listCategories: TCategoryItem[] = [];
 </script>

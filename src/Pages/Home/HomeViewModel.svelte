@@ -1,6 +1,6 @@
 <script lang="ts">
   import Home from "./Home.svelte";
-  import type { TProduct } from "../../Components/ProductCard/types";
+  import type { TProduct } from "../../Components/ProductCard/types.ts";
   import Image1 from "../../assets/image1.webp";
   import Image2 from "../../assets/image2.webp";
   import Produto1 from "../../assets/produto1.png";
