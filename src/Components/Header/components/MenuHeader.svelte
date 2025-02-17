@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
   import Icon from "@iconify/svelte";
   import StoreItem from "./StoreItem.svelte";
-  import type { TStore, TDepartment } from "./types";
+  import type { TStore, TDepartment } from "./types.ts";
 
   /**
    * List of stores displayed in menu

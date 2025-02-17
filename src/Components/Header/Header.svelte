@@ -2,7 +2,7 @@
   import HeaderComponent from "./components/HeaderComponent.svelte";
   import MenuHeader from "./components/MenuHeader.svelte";
   import { fade } from "svelte/transition";
-  import type { TStore, TDepartment } from "./components/types";
+  import type { TStore, TDepartment } from "./components/types.ts";
 
   /**
    * List of stores displayed in menu
