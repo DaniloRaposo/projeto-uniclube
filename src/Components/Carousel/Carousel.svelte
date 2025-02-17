@@ -7,6 +7,10 @@
   let width: number;
   let currentElement = 0;
   let carousel: HTMLElement;
+  let initPosition = 0;
+  let initMousePosition = 0;
+
+  let initMove = false;
 
   function previous(): void {
     // don't move when width is an mobile width
@@ -29,6 +33,42 @@
     carousel.style.setProperty("transition", "left 250ms");
     carousel.style.setProperty("left", `-${width * currentElement}px`);
   }
+
+  function initDrag(ev: MouseEvent) {
+    carousel.style.setProperty("transition", "all 0s");
+    initPosition = -1 * width * currentElement;
+    initMousePosition = ev.clientX;
+    initMove = true;
+  }
+
+  function scroll(ev: MouseEvent) {
+    if (initMove) {
+      carousel.style.setProperty(
+        "left",
+        `${Math.min(
+          0,
+          Math.max(
+            -1 * width * (images.length - 1),
+            initPosition + (ev.clientX - initMousePosition)
+          )
+        )}px`
+      );
+    }
+  }
+
+  function endDrag() {
+    let currentPosition = Number(
+      getComputedStyle(carousel).left.replace("px", "")
+    );
+
+    currentPosition = Math.round(currentPosition / width) * -1;
+
+    currentElement = Math.min(Math.max(0, currentPosition), images.length - 1);
+
+    carousel.style.setProperty("transition", "left 250ms");
+    initMove = false;
+    carousel.style.setProperty("left", `-${width * currentElement}px`);
+  }
 </script>
 
 <div class="container">
@@ -39,6 +79,9 @@
     <div
       class="carousel-container"
       id="carousel-container"
+      on:dragstart={(ev) => initDrag(ev)}
+      on:dragover={(ev) => scroll(ev)}
+      on:dragend={endDrag}
       bind:clientWidth={width}
       bind:this={carousel}
     >
@@ -93,6 +136,7 @@
       border-radius: 1.875rem;
       background-color: #f47920;
       opacity: var(--icon-opacity, 0);
+      color: #fff;
       z-index: 1;
       transition-duration: 300ms;
     }
