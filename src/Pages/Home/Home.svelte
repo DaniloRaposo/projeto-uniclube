@@ -47,8 +47,12 @@
 
 <style lang="scss">
   .container {
-    width: calc(100% - 7.5rem);
-    padding: 3.75rem;
+    @media only screen and (max-width: 600px) {
+      --padding: 0.625rem;
+    }
+
+    width: calc(100% - 2 * var(--padding, 3.75rem));
+    padding: var(--padding, 3.75rem);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,6 +66,8 @@
       padding: 2.5rem;
       gap: 0.9375rem;
       background: url("../../assets/unimed.png");
+      background-repeat: no-repeat;
+      background-size: cover;
       border-radius: 0.3125rem;
 
       .label {
@@ -73,8 +79,8 @@
       .card-container {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 0.625rem;
-        overflow-x: visible;
         height: fit-content;
       }
     }

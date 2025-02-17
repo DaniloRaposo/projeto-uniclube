@@ -29,28 +29,30 @@
       </div>
     </div>
 
-    <div class="info-container">
-      <div class="icon-container">
-        <Icon icon="humbleicons:location" />
+    <div class="icons">
+      <div class="info-container">
+        <div class="icon-container">
+          <Icon icon="humbleicons:location" />
+        </div>
+        <div class="text">
+          <p class="first-line">Onde</p>
+          <p>voce está?</p>
+        </div>
       </div>
-      <div class="text">
-        <p class="first-line">Onde</p>
-        <p>voce está?</p>
-      </div>
-    </div>
 
-    <div class="info-container">
-      <div class="icon-container">
-        <Icon icon="charm:person" />
+      <div class="info-container">
+        <div class="icon-container">
+          <Icon icon="charm:person" />
+        </div>
+        <div class="text">
+          <p class="first-line">Faça login</p>
+          <p>ou cadastre-se</p>
+        </div>
       </div>
-      <div class="text">
-        <p class="first-line">Faça login</p>
-        <p>ou cadastre-se</p>
-      </div>
-    </div>
 
-    <div class="icon-container">
-      <Icon icon="ri:shopping-cart-line" />
+      <div class="icon-container">
+        <Icon icon="ri:shopping-cart-line" />
+      </div>
     </div>
   </div>
   <div class="footer">
@@ -60,7 +62,9 @@
         style="color: #f47920; font-size: 30px;"
       />
       <p class="department">Departamentos</p>
-      <Icon icon={arrowIcon} style="color: #f47920; font-size: 22px;" />
+      <div class="arrow-icon">
+        <Icon icon={arrowIcon} style="color: #f47920; font-size: 22px;" />
+      </div>
       <div class="vline"></div>
       <p>Desconto Cliente Unimed Natal</p>
     </div>
@@ -77,6 +81,19 @@
 
 <style lang="scss">
   .container {
+    @media only screen and (max-width: 780px) {
+      --display-input: none;
+      --display-footer: none;
+
+      img {
+        max-width: 10.625rem;
+      }
+    }
+    @media only screen and (max-width: 1000px) {
+      --display-text: none;
+      --padding: 5%;
+    }
+
     display: flex;
     flex-direction: column;
     height: 11.25rem;
@@ -100,18 +117,25 @@
       flex-direction: row;
       justify-content: space-between;
       gap: 1.25rem;
-      padding-inline: 15%;
+      padding-inline: var(--padding, 15%);
       align-items: center;
       height: 100%;
-      width: 70%;
+      width: calc(100% - 2 * var(--padding, 15%));
       background-color: #eae0d5;
+
+      .icons {
+        display: flex;
+        flex-direction: row;
+        gap: 1.25rem;
+        align-items: center;
+      }
 
       & > * {
         cursor: pointer;
       }
 
       .input-container {
-        display: grid;
+        display: var(--display-input, grid);
         grid: 1fr / 1fr;
         width: 50%;
         height: 3.375rem;
@@ -146,7 +170,7 @@
         gap: 0.375rem;
 
         .text {
-          display: flex;
+          display: var(--display-text, flex);
           flex-direction: column;
           justify-content: center;
           line-height: 16px;
@@ -178,9 +202,13 @@
       flex-direction: row;
       justify-content: space-between;
       height: fit-content;
-      width: 70%;
-      padding: 0.625rem 15%;
+      width: calc(100% - 2 * var(--padding, 15%));
+      padding: 0.625rem var(--padding, 15%);
       background-color: #f7f3ee;
+
+      & > * {
+        cursor: pointer;
+      }
 
       .menu-footer {
         display: flex;
@@ -189,7 +217,14 @@
         gap: 0.375rem;
       }
 
+      .arrow-icon {
+        width: 1.375rem;
+        height: 1.375rem;
+        display: var(--display-footer);
+      }
+
       p {
+        display: var(--display-footer);
         font-size: 1.125rem;
         cursor: pointer;
       }
