@@ -20,20 +20,24 @@
       label: "Pets",
     },
     {
-      icon: "iconoir:glasses",
-      label: "Oticas",
+      icon: "material-symbols-light:ecg-heart-outline",
+      label: "Saúde",
     },
     {
-      icon: "tabler:paw",
-      label: "Pets",
+      icon: "charm:key",
+      label: "Imóveis",
     },
     {
-      icon: "iconoir:glasses",
-      label: "Oticas",
+      icon: "iconoir:shirt",
+      label: "Roupas",
     },
     {
-      icon: "tabler:paw",
-      label: "Pets",
+      icon: "lets-icons:book",
+      label: "Livros",
+    },
+    {
+      icon: "icon-park-outline:car",
+      label: "Carros",
     },
   ];
   const listProducts: TProduct[] = [
