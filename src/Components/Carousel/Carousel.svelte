@@ -97,12 +97,20 @@
 
 <style lang="scss">
   .container {
+    @media only screen and (max-width: 1000px) {
+      --width: 95vw;
+      --height: 12.5rem;
+      --max-width: 95vw;
+    }
+
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0.625rem;
-    max-width: min(80vw, 75rem);
+    max-width: min(var(--max-width, 80vw), 75rem);
+    width: var(--width);
+    height: var(--height);
     cursor: pointer;
 
     .carousel {
@@ -116,8 +124,8 @@
         grid-auto-columns: 100%;
 
         img {
-          width: 100%;
-          height: 100%;
+          width: var(--width, 100%);
+          height: var(--height, 100%);
         }
       }
     }
