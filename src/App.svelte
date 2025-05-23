@@ -12,7 +12,7 @@
 
   const listStore: TStore[] = [
     { image: Image1, label: "Rio Center" },
-    { image: Image2, label: "Ecologica" },
+    { image: Image2, label: "Ecologica" },git config pull.rebase true
   ];
 
   const listDepartments: TDepartment[] = [
