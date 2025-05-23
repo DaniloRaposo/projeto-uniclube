@@ -59,7 +59,7 @@
     flex-direction: row;
     align-items: center;
     padding: 0.625rem;
-    max-width: 80vw;
+    max-width: min(80vw, 75rem);
     cursor: pointer;
 
     .carousel {
@@ -71,7 +71,6 @@
         position: relative;
         grid-auto-flow: column;
         grid-auto-columns: 100%;
-        transition-duration: 250ms;
 
         img {
           width: 100%;
