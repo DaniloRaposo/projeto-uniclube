@@ -98,9 +98,9 @@
 <style lang="scss">
   .container {
     @media only screen and (max-width: 1000px) {
-      --width: 95vw;
-      --height: 12.5rem;
-      --max-width: 95vw;
+      --width: 95vw;git config pull.rebase truegit config pull.rebase true
+      --height: 12.5rem;git config pull.rebase true
+      --max-width: 95vw;git config pull.rebase true
     }
 
     position: relative;
@@ -111,7 +111,7 @@
     max-width: min(var(--max-width, 80vw), 75rem);
     width: var(--width);
     height: var(--height);
-    cursor: pointer;
+    git config pull.rebase true    cursor: pointer;
 
     .carousel {
       width: 100%;
